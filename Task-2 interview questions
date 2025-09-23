@@ -1,0 +1,82 @@
+1. How do you open and write to a file in Python?
+
+In Python, I use the open() function to open a file. To write, I typically open the file in 'w' or 'a' mode. I prefer using a context manager (with statement), which automatically handles closing the file.
+Example:
+
+with open("file.txt", "w") as f:
+    f.write("Hello, world!")
+-----------------
+2. What are common file modes in Python?
+
+The most common file modes are:
+
+'r' for reading (raises error if file doesn't exist),
+
+'w' for writing (creates or overwrites),
+
+'a' for appending (adds to the end, creates if missing),
+
+'r+' for reading and writing.
+There’s also 'b' for binary and 't' for text mode.
+-------------------
+ 3. What’s the use of .strip() in Python?
+
+.strip() removes leading and trailing whitespace, including spaces, tabs, and newline characters. It’s useful when reading lines from a file or user input.
+-------------------
+4. How do lists work in Python?
+
+Lists in Python are ordered, mutable collections. They can store multiple data types and support operations like indexing, slicing, appending, and removing elements.
+-------------------
+5. What’s the difference between append() and insert()?
+
+append() adds an element to the end of the list.
+insert(index, element) adds an element at a specific position.
+For example:
+
+lst.append(5)       # Adds at end
+lst.insert(0, 1)    # Adds at start
+------------------
+6. How can you remove elements from a list in Python?
+
+Python provides several ways:
+
+remove(x) deletes the first occurrence of x
+
+pop(i) removes and returns the item at index i
+
+del list[i] deletes an item by index
+Each method is useful depending on whether you know the value or the index.
+-------------------
+7. What are context managers (with statement) used for?
+
+A context manager ensures that resources like files are properly managed.
+Using with open(...) ensures that the file is automatically closed, even if an error occurs. It's cleaner and safer than manually opening and closing.
+-------------------
+8. How do you loop through a file line by line in Python?
+
+I use a for loop directly on the file object:
+
+with open("file.txt", "r") as f:
+    for line in f:
+        print(line.strip())
+
+
+This is efficient and memory-friendly, especially for large files.
+------------------
+9. What is a data structure?
+
+A data structure is a way of organizing and storing data so it can be accessed and modified efficiently.
+In Python, common data structures include:
+
+Lists (ordered, mutable),
+
+Tuples (ordered, immutable),
+
+Sets (unordered, unique),
+
+Dictionaries (key-value pairs).
+---------------------
+10. What happens if the file doesn’t exist when opening it?
+
+If I open a file in read mode ('r'), Python raises a FileNotFoundError.
+If I use write ('w') or append ('a'), Python will create the file automatically if it doesn’t exist.
